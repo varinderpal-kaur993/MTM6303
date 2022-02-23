@@ -1,0 +1,24 @@
+{%- assign primary_locale = 'null' -%}
+{%- for locale in shop.published_locales -%}{%- if locale.primary -%}{%- assign primary_locale = locale.iso_code | json -%}{%- endif -%}{%- endfor -%}
+<script type="text/javascript">
+  window.GloboMenuConfig = window.GloboMenuConfig || {}
+  window.GloboMenuConfig.hasCarousel = {% if items contains 'carousel' %}true{% else %}false{% endif %};
+  window.GloboMenuConfig.products = window.GloboMenuConfig.products || {};
+  window.GloboMenuConfig.collections = window.GloboMenuConfig.collections || {};
+  window.GloboMenuConfig.pages = window.GloboMenuConfig.pages || {};
+  window.GloboMenuConfig.curLocale = {{request.locale.iso_code | json}};
+  window.GloboMenuConfig.GloboMenuLocale = {{request.locale.iso_code | json}};
+  window.GloboMenuConfig.locale = {{primary_locale}};
+  window.GloboMenuConfig.isMultiCurrency  = false;
+  window.GloboMenuConfig.GloboMenuMissingProducts = [];
+  window.GloboMenuConfig.collections['cakes'] = {handle:{{-collections['cakes'].handle | json-}},title:{{-collections['cakes'].title | json-}}};{%- capture product -%}{{-all_products['baby-carriage_back'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('baby-carriage_back');{%- else -%}window.GloboMenuConfig.products['baby-carriage_back'] = {{-product-}};{%- endif -%}
+{%- capture product -%}{{-all_products['birthday-minion'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('birthday-minion');{%- else -%}window.GloboMenuConfig.products['birthday-minion'] = {{-product-}};{%- endif -%}
+{%- capture product -%}{{-all_products['jungle-safari'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('jungle-safari');{%- else -%}window.GloboMenuConfig.products['jungle-safari'] = {{-product-}};{%- endif -%}
+window.GloboMenuConfig.collections['cupcakes'] = {handle:{{-collections['cupcakes'].handle | json-}},title:{{-collections['cupcakes'].title | json-}}};{%- capture product -%}{{-all_products['sweet-sunflowers'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('sweet-sunflowers');{%- else -%}window.GloboMenuConfig.products['sweet-sunflowers'] = {{-product-}};{%- endif -%}
+{%- capture product -%}{{-all_products['speed-racer-trio'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('speed-racer-trio');{%- else -%}window.GloboMenuConfig.products['speed-racer-trio'] = {{-product-}};{%- endif -%}
+{%- capture product -%}{{-all_products['brunch-at-tiffanys'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('brunch-at-tiffanys');{%- else -%}window.GloboMenuConfig.products['brunch-at-tiffanys'] = {{-product-}};{%- endif -%}
+{%- capture product -%}{{-all_products['jungle-safari'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('jungle-safari');{%- else -%}window.GloboMenuConfig.products['jungle-safari'] = {{-product-}};{%- endif -%}
+{%- capture product -%}{{-all_products['a-bridge-too-far'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('a-bridge-too-far');{%- else -%}window.GloboMenuConfig.products['a-bridge-too-far'] = {{-product-}};{%- endif -%}
+{%- capture product -%}{{-all_products['caesars-palace'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('caesars-palace');{%- else -%}window.GloboMenuConfig.products['caesars-palace'] = {{-product-}};{%- endif -%}
+{%- capture product -%}{{-all_products['cherry-topped-with-chocolate-bow'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('cherry-topped-with-chocolate-bow');{%- else -%}window.GloboMenuConfig.products['cherry-topped-with-chocolate-bow'] = {{-product-}};{%- endif -%}
+window.GloboMenuConfig.pages['contact'] = {handle:{{-pages['contact'].handle | json-}},title:{{-pages['contact'].title | json-}}};</script>
