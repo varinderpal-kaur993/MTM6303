@@ -126,15 +126,7 @@ function mtm6303plugin_build_slider(){
     } ?>
 </div>
 
-<style>
-  <?php get_slider_styles() ?>
 
-</style>
-
-<script>
-<?php get_slider_scripts() ?>
-
-</script>
     <?php
 }
 function mtm6303plugin_func( $atts ){
